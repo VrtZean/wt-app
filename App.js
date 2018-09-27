@@ -1,7 +1,7 @@
 import React from 'react';
 import Weather from './components/Weather'
 import WeatherScreen from'./components/WeatherScreen'
-import ZipCodeScreen from'./component/ZipCodeScreen'
+import ZipCodeScreen from'./components/ZipCodeScreen'
 import { createStackNavigator } from 'react-navigation';
 
 const RootStack = createStackNavigator({
