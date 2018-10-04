@@ -28,13 +28,18 @@ export default class Weather extends React.Component {
         console.warn(error);
         });
         }
-       
+        componentDidUpdate = (prevProps) => {
+            if (prevProps.zipCode !== this.props.zipCode) {
+            this.fetchData()
+            }
+            }
+           
         componentDidMount = () => this.fetchData()
        
     render() {
     return (
     <View style={styles.container}>
-    <ImageBackground source={require('../image/bg.jpg')} style={styles.backdrop}>
+    <ImageBackground source={require('../image/bg2.jpg')} style={styles.backdrop}>
         <View style={styles.topcon}>
     <Text style={styles.Text}>Zip code is {this.props.zipCode}.</Text>
     <Forecast {...this.state.forecast} />
@@ -62,7 +67,7 @@ export default class Weather extends React.Component {
         backgroundColor:'black', 
         opacity:0.5,
     },
-    container: { paddingTop: 25 },
+    container: {  },
     backdrop: { width: '100%', height: '100%',
     alignItems:'center'},
    });
